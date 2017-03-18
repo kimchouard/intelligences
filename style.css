@@ -1,0 +1,310 @@
+/* Smooths fonts. Use warily as it is resource intensive, and only supported on webkit */
+.smooth-style,
+html {
+  -webkit-font-smoothing: antialiased;
+}
+/* Generates nth-child where item is at the top */
+/*
+    Repeats rules for @i
+    To access @i inside arguments, use @i, or @{i}
+ */
+/* Mixin to generate random number;
+   int should be 0 or 1, 1 being to make it an integer
+*/
+/*****************
+    Transitions
+****************/
+/*******************
+	Styles
+*********************/
+* {
+  box-sizing: border-box;
+}
+html {
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+.body-table {
+  display: table;
+  table-layout: fixed;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.body-table .body-cell {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+.body-table .body-cell .body-inner {
+  display: inline-block;
+  width: 375px;
+}
+.swipe-container {
+  width: 375px;
+  padding: 20px 12.5px;
+  position: relative;
+}
+/**********
+	Cards
+************/
+.cards-stack {
+  width: 100%;
+  height: 356px;
+  position: relative;
+}
+.cards-stack .card {
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: left;
+  width: 100%;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border: 1px solid #B2B2B2;
+  overflow: hidden;
+  background: #FFF;
+  -webkit-transform: rotateX(0deg) translate3d(0,0,0);
+  -moz-transform: rotateX(0deg) translate3d(0,0,0);
+  -ms-transform: rotateX(0deg) translate3d(0,0,0);
+  -o-transform: rotateX(0deg) translate3d(0,0,0);
+  transform: rotateX(0deg) translate3d(0,0,0);
+  -webkit-box-shadow: -1px 2px 10px 0px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: -1px 2px 10px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: -1px 2px 10px 0px rgba(0, 0, 0, 0.05);
+  -webkit-transform-origin: center bottom;
+  -moz-transform-origin: center bottom;
+  -ms-transform-origin: center bottom;
+  -o-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.card:nth-child(4) {
+  z-index: 97;
+}
+.card:nth-child(3) {
+  z-index: 98;
+}
+.card:nth-child(2) {
+  z-index: 99;
+}
+.card:nth-child(1) {
+  z-index: 100;
+}
+.card:nth-child(3) {
+  -webkit-transform: scale(0.9216) translate3d(0,10px,0);
+  -moz-transform: scale(0.9216) translate3d(0,10px,0);
+  -ms-transform: scale(0.9216) translate3d(0,10px,0);
+  -o-transform: scale(0.9216) translate3d(0,10px,0);
+  transform: scale(0.9216) translate3d(0,10px,0);
+}
+.card:nth-child(2) {
+  -webkit-transform: scale(0.96) translate3d(0,5px,0);
+  -moz-transform: scale(0.96) translate3d(0,5px,0);
+  -ms-transform: scale(0.96) translate3d(0,5px,0);
+  -o-transform: scale(0.96) translate3d(0,5px,0);
+  transform: scale(0.96) translate3d(0,5px,0);
+}
+.card:nth-child(1) {
+  -webkit-transform: scale(1) translate3d(0,0px,0);
+  -moz-transform: scale(1) translate3d(0,0px,0);
+  -ms-transform: scale(1) translate3d(0,0px,0);
+  -o-transform: scale(1) translate3d(0,0px,0);
+  transform: scale(1) translate3d(0,0px,0);
+}
+.card:nth-child(3) ~ div {
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+  z-index: 5;
+  -webkit-transform: scale(0.884736) translate3d(0,10px,0);
+  -moz-transform: scale(0.884736) translate3d(0,10px,0);
+  -ms-transform: scale(0.884736) translate3d(0,10px,0);
+  -o-transform: scale(0.884736) translate3d(0,10px,0);
+  transform: scale(0.884736) translate3d(0,10px,0);
+}
+.card .image {
+  width: 350px;
+  height: 350px;
+  position: relative;
+  padding: 50% 20px 20px 20px;
+  text-align: center;
+}
+
+.card .image p {
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+}
+
+.card .text {
+  color: #404040;
+}
+.card .text .table {
+  display: table;
+  width: 100%;
+  height: 50px;
+}
+.card .text .table .cell {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 5px 15px;
+}
+.card .text h2 {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 18px;
+  margin: 0;
+}
+.card .text h2 strong {
+  font-weight: 600;
+}
+.controls {
+  margin-top: 35px;
+  font-size: 0;
+}
+.controls a {
+  width: 112px;
+  height: 112px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 40px;
+  background: #E8E8E8;
+  border: 1px solid #E8E8E8;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  position: relative;
+  font-style: normal;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.controls a.disabled {
+  cursor: default;
+  color: #CCC!important;
+}
+.controls a.disabled:active {
+  background: #E8E8E8!important;
+}
+.controls a span {
+  display: block;
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  line-height: 90px;
+  top: 50%;
+  left: 50%;
+  margin: -45px 0 0 -45px;
+  background: #FFF;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-box-shadow: -1px 3px 0px 0px rgbaa(0, 0, 0, 0.08);
+  -moz-box-shadow: -1px 3px 0px 0px rgbaa(0, 0, 0, 0.08);
+  box-shadow: -1px 3px 0px 0px rgbaa(0, 0, 0, 0.08);
+}
+.controls a span i {
+  font-style: normal;
+}
+.controls a.like {
+  color: #63DE9B;
+}
+.controls a.like:hover {
+  color: #8de7b6;
+}
+.controls a.like:active {
+  color: #39d580;
+  background: #FFF;
+}
+.controls a.dislike {
+  color: #FF7359;
+}
+.controls a.dislike:hover {
+  color: #ff9e8c;
+}
+.controls a.dislike:active {
+  color: #ff4826;
+  background: #FFF;
+}
+.empty-stack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 390px;
+}
+.empty-stack .table {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: table;
+}
+.empty-stack .table .cell {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 20px 12.5px;
+  text-align: center;
+}
+.empty-stack .table .cell h3 {
+  display: inline-block;
+  color: #404040;
+  font-size: 18px;
+  font-weight: 500;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #E8E8E8;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+.card.like,
+.card.dislike {
+  z-index: 105;
+}
+.card.like {
+  -webkit-transform-origin: left bottom;
+  -moz-transform-origin: left bottom;
+  -ms-transform-origin: left bottom;
+  -o-transform-origin: left bottom;
+  transform-origin: left bottom;
+  -webkit-transform: rotate3d(0,0,1,10deg) translate3d(260px,-115px,0);
+  -moz-transform: rotate3d(0,0,1,10deg) translate3d(260px,-115px,0);
+  -ms-transform: rotate3d(0,0,1,10deg) translate3d(260px,-115px,0);
+  -o-transform: rotate3d(0,0,1,10deg) translate3d(260px,-115px,0);
+  transform: rotate3d(0,0,1,10deg) translate3d(260px,-115px,0);
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+}
+.card.dislike {
+  -webkit-transform-origin: right bottom;
+  -moz-transform-origin: right bottom;
+  -ms-transform-origin: right bottom;
+  -o-transform-origin: right bottom;
+  transform-origin: right bottom;
+  -webkit-transform: rotate3d(0,0,1,-10deg) translate3d(-260px,-115px,0);
+  -moz-transform: rotate3d(0,0,1,-10deg) translate3d(-260px,-115px,0);
+  -ms-transform: rotate3d(0,0,1,-10deg) translate3d(-260px,-115px,0);
+  -o-transform: rotate3d(0,0,1,-10deg) translate3d(-260px,-115px,0);
+  transform: rotate3d(0,0,1,-10deg) translate3d(-260px,-115px,0);
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+}
+
+.results {
+  text-align: left;
+}
